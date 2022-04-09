@@ -1,0 +1,28 @@
+33c33
+< weights = # TODO: Your code here!
+---
+> weights = get_init_weights(env.action_space.n, IHT_SIZE)
+49c49
+<     A = # TODO: Your code here!
+---
+>     A = get_epsilon_greedy_action(ε, tile_indices, weights)
+73c73
+<         Q = # TODO: Your code here!
+---
+>         Q = get_action_value(A, tile_indices, weights)
+76c76
+<         A_next = # TODO: Your code here!
+---
+>         A_next = get_epsilon_greedy_action(ε, tile_indices_next, weights)
+79c79
+<         Q_next = # TODO: Your code here!
+---
+>         Q_next = get_action_value(A_next, tile_indices_next, weights)
+84c84
+<         δ = # TODO: Your code here!
+---
+>         δ = R_next + γ * Q_next - Q
+87c87
+<         # TODO: Your code here!
+---
+>         update_weights(α, δ, A, tile_indices, weights)
